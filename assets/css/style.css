@@ -17,7 +17,7 @@ body {
 
 textarea{
   background: transparent;
-  border: none;
+  border: 1px solid black;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
@@ -43,33 +43,48 @@ textarea{
 .time-block{
   text-align: center;
   border-radius: 15px;
+  padding: 10px 5px;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid white;
 }
 
 .hour {
+  display: flex;
   background-color: var(--hour);
   color: #000000;
-  border-top: 1px dashed #000000;
+  border: 1px solid #000000;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  flex-grow: 1;
+  max-width: 8rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .past {
   background-color: var(--past);
-  color: white;
+  color: black;
+  flex-grow: 1;
 }
 
 .present {
   background-color: var(--present);
-  color: white;
+  color: black;
+  flex-grow: 1;
 }
 
 .future {
   background-color: var(--future);
-  color: white;
+  color: black;
+  flex-grow: 1;
+}
+
+.time-block .row {
+  flex-grow: 1;
 }
 
 .saveBtn {
@@ -78,6 +93,8 @@ textarea{
   border-bottom-right-radius: 15px;
   background-color: var(--save);
   color: white;
+  flex-grow: 1;
+  max-width: 8rem;
 }
 
 .saveBtn i:hover {
