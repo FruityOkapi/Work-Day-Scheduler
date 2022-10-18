@@ -41,6 +41,56 @@ function createPlanner(){
         }
         var bttn = $('<button>');
         bttn.addClass('saveBtn');
+        if (i === 0) {
+            bttn.click(function() {
+                var effectedButton = $('#9am');
+                appointments[0] = effectedButton.val();
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 1) {
+            bttn.click(function() {
+                var effectedButton = $('#10am');
+                appointments[1] = effectedButton.val();
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 2) {
+            bttn.click(function() {
+                var effectedButton = $('#11am');
+                appointments[2] = effectedButton.val();
+                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 3) {
+            bttn.click(function() {
+                var effectedButton = $('#12pm');
+                appointments[3] = effectedButton.val();
+               localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 4) {
+            bttn.click(function() {
+                var effectedButton = $('#1pm');
+                appointments[4] = effectedButton.val();                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 5) {
+            bttn.click(function() {
+                var effectedButton = $('#2pm');
+                appointments[5] = effectedButton.val();                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 6) {
+            bttn.click(function() {
+                var effectedButton = $('#3pm');
+                appointments[6] = effectedButton.val();                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 7) {
+            bttn.click(function() {
+                var effectedButton = $('#4pm');
+                appointments[7] = effectedButton.val();                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        } else if (i === 8) {
+            bttn.click(function() {
+                var effectedButton = $('#5pm');
+                appointments[8] = effectedButton.val();                localStorage.setItem('appointments', JSON.stringify(appointments));
+            })
+        }
         var saveIcon = $('<i>');
         saveIcon.addClass('bi');
         saveIcon.addClass('bi-save');
@@ -51,10 +101,16 @@ function createPlanner(){
         container.append(timeblock);
     }
 }
+function setAppointments() {
+    var getAppts = localStorage.getItem('appointments');
+    appointments = JSON.parse(getAppts);
+}
+
 // This is for first time launch
 var lsApp = localStorage.getItem('appointments');
 if (lsApp === null) {
     localStorage.setItem('appointments', JSON.stringify(appointments));
 }
 // This is for displaying the page
+setAppointments();
 createPlanner();
