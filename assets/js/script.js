@@ -32,6 +32,7 @@ function createPlanner(){
         }
         var formT = $('<textarea>');
         formT.attr('id', ids[i]);
+        formT.attr('rows', '3');
         formT.text(appointments[i]);
         if (currentHour < times[i]) {
             formT.addClass('future');
